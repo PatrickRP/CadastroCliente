@@ -9,7 +9,7 @@ public class Usuario {
     String estado;
     String telefone;
     String email;
-    String inscricaoEstadual;
+    String inscricao_estadual;
 
     public String getCnpj() {
         return cnpj;
@@ -75,11 +75,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
+    public String getInscricao_estadual() {
+        return inscricao_estadual;
     }
 
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
+    public void setInscricao_estadual(String inscricao_estadual) {
+        this.inscricao_estadual = inscricao_estadual;
     }
 }
