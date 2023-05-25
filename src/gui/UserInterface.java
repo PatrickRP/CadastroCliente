@@ -1,7 +1,7 @@
 package gui;
 
-import dao.UsuarioDAO;
-import modelo.Usuario;
+import GerBDdao.ClienteDAO;
+import modelo.Cliente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -33,16 +33,16 @@ public UserInterface() {
         @Override
         public void actionPerformed(ActionEvent e) {
             // instanciando a classe Usuario do pacote modelo e criando seu objeto usuarios
-            Usuario usuarios = new Usuario();
-            usuarios.setCnpj(textField1.getText());
-            usuarios.setNome(textField2.getText());
-            usuarios.setCep(textField3.getText());
-            usuarios.setEndereco(textField4.getText());
-            usuarios.setCidade(textField5.getText());
-            usuarios.setEstado(textField6.getText());
-            usuarios.setTelefone(textField7.getText());
-            usuarios.setEmail(textField8.getText());
-            usuarios.setInscricao_estadual(textField9.getText());
+            Cliente clientes = new Cliente();
+            clientes.setCnpj(textField1.getText());
+            clientes.setNome(textField2.getText());
+            clientes.setCep(textField3.getText());
+            clientes.setEndereco(textField4.getText());
+            clientes.setCidade(textField5.getText());
+            clientes.setEstado(textField6.getText());
+            clientes.setTelefone(textField7.getText());
+            clientes.setEmail(textField8.getText());
+            clientes.setInscricao_estadual(textField9.getText());
 
             // fazendo a validação dos dados
             if ((textField1.getText().isEmpty()) || (textField2.getText().isEmpty()) || (textField3.getText().isEmpty()) || (textField4.getText().isEmpty()
@@ -52,8 +52,8 @@ public UserInterface() {
             else {
 
                 // instanciando a classe UsuarioDAO do pacote dao e criando seu objeto dao
-                UsuarioDAO dao = new UsuarioDAO();
-                dao.add(usuarios);
+                ClienteDAO dao = new ClienteDAO();
+                dao.add(clientes);
                 JOptionPane.showMessageDialog(null, "Usuário "+textField2.getText()+" inserido com sucesso! ");
             }
 
