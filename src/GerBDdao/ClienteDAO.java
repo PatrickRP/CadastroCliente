@@ -1,15 +1,15 @@
-package dao;
+package GerBDdao;
 
 
-import modelo.Usuario;
+import modelo.Cliente;
 
 import java.sql.*;
 import java.sql.Connection;
 
-public class UsuarioDAO {
+public class ClienteDAO {
     private Connection connection;
 
-    public UsuarioDAO() {
+    public ClienteDAO() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbcadcliente", "root", "94412210");
@@ -19,7 +19,7 @@ public class UsuarioDAO {
     }
 
     
-    public void add(Usuario cliente) {
+    public void add(Cliente cliente) {
         try {
             String sql = "INSERT INTO cliente(cnpj, nome, cep, endereco, cidade, estado, telefone, email, inscricao_estadual) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -41,7 +41,7 @@ public class UsuarioDAO {
         }
     }
 
-    public void atualiza(Usuario cliente) {
+    public void atualiza(Cliente cliente) {
         try {
             String sql = "UPDATE cliente SET cnpj=?, nome=?, cep=?, endereco=?, cidade=?, estado=?, telefone=?, email=?, inscricao_estadual=? WHERE cnpj=?";
             PreparedStatement statement = connection.prepareStatement(sql);

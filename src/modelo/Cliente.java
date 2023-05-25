@@ -1,6 +1,6 @@
 package modelo;
 
-public class Usuario {
+public class Cliente {
     String cnpj;
     String nome;
     String cep;
